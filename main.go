@@ -89,7 +89,8 @@ func main() {
 	delayState.Next(lambdaTaskState)
 
 	// Startup the machine.
-	startMachine := step.NewStateMachine(lambdaTaskState)
+	stateMachineName := spartaCF.UserScopedStackName("StateMachine")
+	startMachine := step.NewStateMachine(stateMachineName, lambdaTaskState)
 
 	// Setup the hook to annotate
 	workflowHooks := &sparta.WorkflowHooks{
