@@ -40,7 +40,7 @@ func main() {
 	lambdaFunctions = append(lambdaFunctions, lambdaFn)
 
 	// Make all the Step states
-	lambdaTaskState := step.NewTaskState("lambdaRollDie", lambdaFn)
+	lambdaTaskState := step.NewLambdaTaskState("lambdaRollDie", lambdaFn)
 	successState := step.NewSuccessState("success")
 	delayState := step.NewWaitDelayState("tryAgainShortly", 3*time.Second)
 	lambdaChoices := []step.ChoiceBranch{
