@@ -23,3 +23,6 @@ _testmain.go
 *.test
 *.prof
 .sparta/*
+graph.html
+parallel/.sparta/*
+parallel/graph.html
